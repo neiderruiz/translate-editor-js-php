@@ -1,0 +1,21 @@
+{
+    "name": "neiderruiz/translate-editor-js",
+    "description": "translate text blocks of editorjs.io",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0",
+    "autoload": {
+        "psr-4": {
+            "Neiderruiz\\TranslateEditorJs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Neider Ruiz",
+            "email": "57574910+neiderruiz@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "neiderruiz/translator-php": "dev-1.1x"
+    }
+}
