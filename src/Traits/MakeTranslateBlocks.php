@@ -82,10 +82,20 @@ trait MakeTranslateBlocks
                         continue;
                     }
 
-                    $newBlocks->$key[] = $item;
+                    if($item->type == 'embed'){
+                        $data = $item;
+                        $data->data->caption = $this->translate($item->data->caption, $outputLanguage, $inputLanguage);
+                        $newBlocks->$key[] = $data;
+                        continue;
+                    }
 
-                    # code...
-                    // $newBlocks->$key = $this->translate(json_encode($value), $outputLanguage,$inputLanguage);
+                    if($item->type == 'code'){
+                        $data = $item;
+                        $newBlocks->$key[] = $data;
+                        continue;
+                    }
+                    $data = $item;
+                    $newBlocks->$key[] = $data;
                 }
             } else {
                 $newBlocks->$key = $value;
